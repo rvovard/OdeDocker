@@ -14,13 +14,22 @@ services:
     build: FeatureService
     depends_on:
       - testdb
-    environment:
-      - NODE_ENV=test
     ports:
       - "7231:7231"
-    command: bash -c "knex migrate:latest && knex seed:run && npm start"
+    environment:
+      - NODE_ENV=test
+    command: bash -c "sleep 1; knex migrate:latest && knex seed:run && npm start"
     networks:
       - db
+
+  front_manager:
+    build: FrontManager
+    depends_on:
+      - feature_service
+    ports:
+      - "3000:3000"
+    command: npm start
+    networks:
       - front
       
 networks:
