@@ -1,0 +1,28 @@
+# ODE docker compose file
+# Copyright (C) 2018 Project-ODE
+
+version: '3.5'
+services:
+  testdb:
+    image: mdillon/postgis
+    environment:
+      - POSTGRES_USER=test
+    networks:
+      - db
+
+  feature_service:
+    build: FeatureService
+    depends_on:
+      - testdb
+    environment:
+      - NODE_ENV=test
+    ports:
+      - "7231:7231"
+    command: bash -c "knex migrate:latest && knex seed:run && npm start"
+    networks:
+      - db
+      - front
+      
+networks:
+  front:
+  db:
