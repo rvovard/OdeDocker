@@ -18,7 +18,7 @@ services:
       - "7231:7231"
     environment:
       - NODE_ENV=test
-    command: bash -c "sleep 1; knex migrate:latest && knex seed:run && npm start"
+    command: bash -c "sleep 5; knex migrate:latest && knex seed:run && npm start"
     networks:
       - db
 
