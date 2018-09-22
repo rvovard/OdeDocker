@@ -22,8 +22,8 @@ services:
     networks:
       - db
 
-  front_manager:
-    build: FrontManager
+  front_app:
+    build: FrontApp
     depends_on:
       - feature_service
     ports:
