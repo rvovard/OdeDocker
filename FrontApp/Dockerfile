@@ -16,4 +16,7 @@ RUN cd public/audio-annotator && \
 
 RUN npm install
 
-RUN echo "REACT_APP_API_URL=http://localhost:7231/data.ode.org/v1" > .env.development.local
+RUN echo "REACT_APP_API_URL=http://localhost:7231/data.ode.org/v1" > .env.production.local
+
+RUN npm run build
+RUN npm install -g serve

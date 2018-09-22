@@ -27,8 +27,8 @@ services:
     depends_on:
       - feature_service
     ports:
-      - "3000:3000"
-    command: npm start
+      - "5000:5000"
+    command: serve -s build
     networks:
       - front
       
