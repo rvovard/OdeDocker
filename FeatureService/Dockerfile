@@ -4,7 +4,7 @@ FROM node:9.2.0
 
 WORKDIR /opt
 
-RUN git clone --single-branch -b add-campaign-report-endpoint https://github.com/ixio/FeatureService
+RUN git clone --single-branch -b demo-september2018 https://github.com/ixio/FeatureService
 
 WORKDIR /opt/FeatureService
 
