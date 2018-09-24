@@ -8,6 +8,9 @@ RUN git clone --single-branch -b add-campaign-report-endpoint https://github.com
 
 WORKDIR /opt/FeatureService
 
+COPY audio_files/* resources/annotator/wav/
+COPY z_init_demo.js db/seeds/test/
+
 RUN npm install
 
 ADD ./hyperswitch.patch /opt/FeatureService/hyperswitch.patch
