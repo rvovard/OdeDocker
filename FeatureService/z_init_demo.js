@@ -108,9 +108,14 @@ exports.seed = function(knex, Promise) {
                 end_date: '2010-09-01', geo_metadata_id: 1, tabular_metadata_id: 1, owner_id: 5
             },
             {
-                id: 4, name: 'Demo-Septembre2018', dataset_path: '',
+                id: 4, name: 'Demo-Septembre2018-SPM', dataset_path: '',
                 status: 1, dataset_type_id: 1, files_type: '.wav', start_date: '2010-08-19',
                 end_date: '2010-09-30', geo_metadata_id: 2, tabular_metadata_id: 1, owner_id: 5
+            },
+            {
+                id: 5, name: 'Demo-Septembre2018-Whales', dataset_path: '',
+                status: 1, dataset_type_id: 1, files_type: '.wav', start_date: '2010-08-19',
+                end_date: '2010-09-30', geo_metadata_id: 2, tabular_metadata_id: 1, owner_id: 2
             },
         ]);
     }).then(() => {
@@ -186,6 +191,41 @@ exports.seed = function(knex, Promise) {
                 id: 14, dataset_id: 4, filename: 'demo10_1003.wav',
                 filepath: '',
                 size: 1958082, audio_metadata_id: 14
+            },
+            {
+                id: 15, dataset_id: 5, filename: 's1.wav',
+                filepath: '',
+                size: 1989392, audio_metadata_id: 5
+            },
+            {
+                id: 16, dataset_id: 5, filename: 's2.wav',
+                filepath: '',
+                size: 1970124, audio_metadata_id: 6
+            },
+            {
+                id: 17, dataset_id: 5, filename: 's3.wav',
+                filepath: '',
+                size: 2052010, audio_metadata_id: 7
+            },
+            {
+                id: 18, dataset_id: 5, filename: 's4.wav',
+                filepath: '',
+                size: 1984576, audio_metadata_id: 8
+            },
+            {
+                id: 19, dataset_id: 5, filename: 's5.wav',
+                filepath: '',
+                size: 2215784, audio_metadata_id: 9
+            },
+            {
+                id: 20, dataset_id: 5, filename: 's6.wav',
+                filepath: '',
+                size: 1859338, audio_metadata_id: 10
+            },
+            {
+                id: 21, dataset_id: 5, filename: 's7.wav',
+                filepath: '',
+                size: 2015884, audio_metadata_id: 11
             }
         ]);
     }).then(() => {
