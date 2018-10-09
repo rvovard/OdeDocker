@@ -4,12 +4,9 @@ FROM node:9.2.0
 
 WORKDIR /opt
 
-RUN git clone --single-branch -b demo-september2018 https://github.com/ixio/FeatureService
+RUN git clone --single-branch -b demo-october2018 https://github.com/ixio/FeatureService
 
 WORKDIR /opt/FeatureService
-
-COPY audio_files/* resources/annotator/wav/
-COPY z_init_demo.js db/seeds/test/
 
 RUN npm install
 
@@ -22,5 +19,9 @@ RUN touch htpasswd && \
     sed -i "s/port: 5433/port: 5432,\n            host: 'testdb'/" knexfile.js
 
 RUN ln -s /opt/FeatureService/node_modules/knex/bin/cli.js /usr/bin/knex
+
+COPY data/*.wav resources/annotator/wav/
+COPY data/*.png resources/annotator/png/
+COPY data/init.js db/seeds/test/
 
 EXPOSE 7231
