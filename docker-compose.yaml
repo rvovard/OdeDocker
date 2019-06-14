@@ -1,5 +1,5 @@
-# ODE docker compose file
-# Copyright (C) 2018 Project-ODE
+# ODE docker-compose file for development environment
+# 2019 Project-ODE
 
 version: '3.5'
 services:
@@ -22,16 +22,5 @@ services:
     networks:
       - db
 
-  front_app:
-    build: FrontApp
-    depends_on:
-      - feature_service
-    ports:
-      - "5000:5000"
-    command: serve -s build
-    networks:
-      - front
-      
 networks:
-  front:
   db:
